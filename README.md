@@ -1,5 +1,6 @@
 # 🥖 The Daily Loaf Bakery
 
+ URL: http://localhost:8080/
 > **“Good Things Are Always Baked ♡”**  
 > A complete, modern, artisan bakery website inspired by boutique European-style micro-bakeries in Windhoek, Namibia.
 
