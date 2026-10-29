@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Daily Loaf Bakery | Artisan Pastries, Breads & Cakes | Windhoek, Namibia</title>
+  
+  <meta name="description" content="Welcome to The Daily Loaf Bakery. Handcrafted artisan breads, golden flaky croissants, decadent cakes, and sweet treats baked fresh every morning in Windhoek, Namibia. Order online or via WhatsApp." />
+  <meta property="og:title" content="The Daily Loaf Bakery | Good Things Are Always Baked ♡" />
+  <meta property="og:description" content="Artisan pastries, sourdough bread, cupcakes, and celebration cakes baked with love. Fast delivery across Windhoek." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/hero_basket.jpg" />
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div style="background-color: var(--chocolate-dark); color: var(--warm-cream); font-size: 0.8rem; padding: 0.45rem 1rem; text-align: center; letter-spacing: 0.05em; font-weight: 500;">
+    <span>🥐 Freshly baked every morning in Windhoek • Free delivery on orders over N$ 300 • </span>
+    <a href="https://wa.me/264811234567" target="_blank" style="color: var(--caramel-light); text-decoration: underline; font-weight: 600;">
+      Order via WhatsApp: +264 81 123 4567
+    </a>
+  </div>
+
+  <!-- Sticky Header / Navigation -->
+  <header class="header-wrapper" id="headerWrapper">
+    <div class="container">
+      <nav class="header-nav" aria-label="Main Navigation">
+        
+        <!-- Brand Logo Inspired by Screenshot -->
+        <a href="#home" class="brand-logo-link" aria-label="The Daily Loaf Bakery Home">
+          <!-- Stylized Wheat Stalks SVG -->
+          <svg class="brand-wheat-icon" viewBox="0 0 40 20" fill="currentColor">
+            <path d="M20 2C19 6 15 8 11 9C15 10 18 12 19 16C19.5 12 21 8 20 2Z" opacity="0.9" />
+            <path d="M20 2C21 6 25 8 29 9C25 10 22 12 21 16C20.5 12 19 8 20 2Z" opacity="0.9" />
+            <circle cx="20" cy="18" r="1.5" />
+          </svg>
+          <span class="brand-title">The Daily Loaf</span>
+          <span class="brand-subtitle">BAKERY</span>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#shop" class="nav-link">Shop</a></li>
+          <li><a href="#about" class="nav-link">About Us</a></li>
+          <li><a href="#gallery" class="nav-link">Gallery</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <!-- Action Icons (Search, Wishlist, Cart, Mobile Toggle) -->
+        <div class="header-actions">
+          <!-- Search Icon Button -->
+          <button class="icon-btn" id="searchBtn" title="Search treats" aria-label="Search">
+            <i data-lucide="search" style="width: 20px; height: 20px;"></i>
+          </button>
+
+          <!-- Wishlist Heart Button -->
+          <button class="icon-btn" id="wishlistBtn" title="Your saved favourites" aria-label="Wishlist">
+            <i data-lucide="heart" style="width: 20px; height: 20px;"></i>
+            <span class="cart-badge" id="wishlistBadge" style="display: none; background-color: #D32F2F;">0</span>
+          </button>
+
+          <!-- Shopping Cart Button with Dynamic Badge -->
+          <button class="icon-btn" id="cartBtn" title="View Shopping Cart" aria-label="Shopping Cart">
+            <i data-lucide="shopping-bag" style="width: 20px; height: 20px;"></i>
+            <span class="cart-badge" id="cartBadge">0</span>
+          </button>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button class="icon-btn menu-toggle" id="mobileMenuBtn" aria-label="Open Menu">
+            <i data-lucide="menu" style="width: 22px; height: 22px;"></i>
+          </button>
+        </div>
+
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Slide-out Drawer -->
+  <aside class="drawer-wrapper" id="mobileDrawer" aria-label="Mobile Navigation Drawer">
+    <div class="drawer-header">
+      <span class="brand-title" style="font-size: 1.8rem;">The Daily Loaf</span>
+      <button class="icon-btn" id="closeMobileDrawer" aria-label="Close Mobile Menu">
+        <i data-lucide="x" style="width: 22px; height: 22px;"></i>
+      </button>
+    </div>
+    <div class="drawer-body">
+      <ul style="list-style: none; display: flex; flex-direction: column; gap: 1.25rem; font-size: 1.15rem; font-weight: 600; padding: 1rem 0;">
+        <li><a href="#home" class="nav-link" data-nav="#home">Home</a></li>
+        <li><a href="#shop" class="nav-link" data-nav="#shop">Shop All Treats</a></li>
+        <li><a href="#about" class="nav-link" data-nav="#about">About Our Bakery</a></li>
+        <li><a href="#gallery" class="nav-link" data-nav="#gallery">Photo Gallery</a></li>
+        <li><a href="#contact" class="nav-link" data-nav="#contact">Contact & Location</a></li>
+      </ul>
+
+      <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); font-size: 0.9rem; color: var(--text-muted);">
+        <p style="margin-bottom: 0.5rem;">📍 42 Independence Ave, Windhoek</p>
+        <p style="margin-bottom: 0.5rem;">⏰ Mon - Fri: 07:00 - 18:00</p>
+        <p style="margin-bottom: 1.2rem;">📞 +264 81 123 4567</p>
+
+        <a href="https://wa.me/264811234567" target="_blank" class="btn-whatsapp-order" style="padding: 0.75rem 1.2rem; font-size: 0.9rem;">
+          <i data-lucide="message-circle" style="width: 18px; height: 18px;"></i>
+          Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Views Container -->
+  <main id="mainContent">
+
+    <!-- ====================================================================
+         VIEW: HOME
+         ==================================================================== -->
+    <div id="viewHome">
+
+      <!-- Hero Section - Inspired by the uploaded design -->
+      <section class="hero-section" aria-label="Bakery Hero Banner">
+        <div class="container">
+          <div class="hero-grid">
+            
+            <!-- Left Hero Content -->
+            <div class="hero-content">
+              <div class="hero-tagline">
+                <span>FRESHLY BAKED</span>
+                <span>•</span>
+                <span>MADE WITH LOVE</span>
+              </div>
+              <h1 class="hero-title">
+                Good Things<br />
+                Are Always<br />
+                Baked <span class="hero-heart">♡</span>
+              </h1>
+              <p class="hero-description">
+                From warm, fluffy breads to sweet, decadent treats, we bake happiness every day. Fresh ingredients. Real flavours. Always.
+              </p>
+              <div class="hero-buttons">
+                <a href="#shop" class="btn-primary" data-nav="#shop">
+                  Shop Our Treats
+                  <i data-lucide="arrow-right" style="width: 18px; height: 18px;"></i>
+                </a>
+                <a href="#about" class="btn-secondary" data-nav="#about">
+                  Explore Our Bakery
+                </a>
+              </div>
+            </div>
+
+            <!-- Right Hero Photography with floating script sticker -->
+            <div class="hero-visual">
+              <div class="hero-image-wrapper">
+                <img src="images/hero_basket.jpg" alt="Basket of golden flaky croissants, chocolate chip muffins, cinnamon rolls and warm coffee" />
+              </div>
+              <div class="hero-sticker">
+                <div class="hero-sticker-text">Freshly Baked Daily ♡</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Bakery Benefits Bar (4 Blocks with Line Icons) -->
+      <section class="benefits-section" aria-label="Bakery Guarantees">
+        <div class="container">
+          <div class="benefits-grid">
+            
+            <div class="benefit-card">
+              <div class="benefit-icon-box">
+                <i data-lucide="leaf" style="width: 24px; height: 24px;"></i>
+              </div>
+              <h3 class="benefit-title">PREMIUM INGREDIENTS</h3>
+              <p class="benefit-desc">Only the best, always.</p>
+            </div>
+
+            <div class="benefit-card">
+              <div class="benefit-icon-box">
+                <i data-lucide="heart" style="width: 24px; height: 24px;"></i>
+              </div>
+              <h3 class="benefit-title">BAKED WITH LOVE</h3>
+              <p class="benefit-desc">Every bite matters.</p>
+            </div>
+
+            <div class="benefit-card">
+              <div class="benefit-icon-box">
+                <i data-lucide="truck" style="width: 24px; height: 24px;"></i>
+              </div>
+              <h3 class="benefit-title">FAST & RELIABLE DELIVERY</h3>
+              <p class="benefit-desc">Freshness, right to your door.</p>
+            </div>
+
+            <div class="benefit-card">
+              <div class="benefit-icon-box">
+                <i data-lucide="star" style="width: 24px; height: 24px;"></i>
+              </div>
+              <h3 class="benefit-title">CUSTOM ORDERS</h3>
+              <p class="benefit-desc">For your special moments.</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Best Sellers Section - Matches Exact Uploaded Design Layout -->
+      <section class="best-sellers-section" aria-label="Customer Favourites">
+        <div class="container">
+          <div class="best-sellers-layout">
+            
+            <!-- Left Column: Title & Intro -->
+            <div class="best-sellers-header">
+              <div class="section-label">OUR BEST SELLERS</div>
+              <h2 class="section-title">A Little Sweetness Goes a Long Way</h2>
+              <p class="section-subtitle">
+                Handcrafted with care, our best sellers are loved for a reason. Take a look at some of our customer favourites!
+              </p>
+              <a href="#shop" class="btn-dark-pill" data-nav="#shop">
+                View All Products
+                <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+              </a>
+            </div>
+
+            <!-- Right Column: Product Cards Grid (Populated via JS) -->
+            <div class="products-cards-grid" id="bestSellersGrid">
+              <!-- Dynamically rendered via renderBestSellers() -->
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Ribbon Divider Banner - Matches Exact Screenshot Ribbon -->
+      <div class="ribbon-banner">
+        <div class="container">
+          <div class="ribbon-content">
+            <!-- Left Wheat Stalk -->
+            <svg class="ribbon-stalk" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C11 5 8 7 5 8C8 9 10 11 11 14C11.5 11 13 8 12 2Z" />
+              <path d="M12 2C13 5 16 7 19 8C16 9 14 11 13 14C12.5 11 11 8 12 2Z" />
+            </svg>
+            <div class="ribbon-divider-line"></div>
+            
+            <div class="ribbon-text">
+              Real Ingredients <span>•</span> Freshly Baked <span>•</span> Always Delicious
+            </div>
+            
+            <div class="ribbon-divider-line"></div>
+            <!-- Right Wheat Stalk -->
+            <svg class="ribbon-stalk" viewBox="0 0 24 24" fill="currentColor" style="transform: scaleX(-1);">
+              <path d="M12 2C11 5 8 7 5 8C8 9 10 11 11 14C11.5 11 13 8 12 2Z" />
+              <path d="M12 2C13 5 16 7 19 8C16 9 14 11 13 14C12.5 11 11 8 12 2Z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- About Preview Section -->
+      <section class="about-preview-section" aria-label="About The Bakery">
+        <div class="container">
+          <div class="about-preview-grid">
+            
+            <div class="about-image-collage">
+              <img src="images/baker_crafting.jpg" alt="Artisan baker shaping fresh dough with flour dust" class="about-img-main" />
+              <div class="about-badge-card">
+                <div class="about-badge-number">100%</div>
+                <div class="about-badge-label">Natural Cultured Butter & Slow Fermentation</div>
+              </div>
+            </div>
+
+            <div class="about-preview-text">
+              <div class="section-label">OUR PASSION & PHILOSOPHY</div>
+              <h2 class="section-title">Baked Fresh Every Morning with Heart & Soul</h2>
+              <p style="font-size: 1.05rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.2rem;">
+                At <strong>The Daily Loaf Bakery</strong>, we believe that true baking is a craft of patience, love, and fine ingredients. Every croissant is laminated by hand with pure Namibian creamery butter, every sourdough boule undergoes a patient 36-hour wild yeast fermentation, and every cake is iced with artisanal care.
+              </p>
+              <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 2rem;">
+                Whether you are stepping in for a morning cappuccino and flaky pastry or ordering a custom celebration cake for life's sweetest milestones, we are here to warm your day.
+              </p>
+              <a href="#about" class="btn-dark-pill" data-nav="#about">
+                Learn More About Us
+                <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Customer Testimonials Section -->
+      <section class="testimonials-section" aria-label="Customer Reviews">
+        <div class="container">
+          <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+            <div class="section-label">WORDS FROM OUR GUESTS</div>
+            <h2 class="section-title">Loved by Our Community</h2>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">
+              See what our regulars have to say about our oven-fresh treats.
+            </p>
+          </div>
+
+          <div class="testimonials-grid">
+            <!-- Review 1 -->
+            <div class="testimonial-card">
+              <div class="rating-stars">★★★★★</div>
+              <p class="testimonial-quote">
+                “The croissants here are truly in a league of their own! That buttery, flaky crunch takes me straight back to Europe. The WhatsApp ordering makes morning pickups effortless.”
+              </p>
+              <div class="testimonial-author">
+                <div>
+                  <div class="author-name">Helena Nangolo</div>
+                  <div class="author-loc">Windhoek Central</div>
+                </div>
+                <span class="demo-content-badge">Demo Review</span>
+              </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="testimonial-card">
+              <div class="rating-stars">★★★★★</div>
+              <p class="testimonial-quote">
+                “We ordered the Chocolate Fudge Cake for my wife's 40th celebration. It was rich, gorgeously decorated, and everybody asked where we got it. Top-tier craftsmanship!”
+              </p>
+              <div class="testimonial-author">
+                <div>
+                  <div class="author-name">Markus Steenkamp</div>
+                  <div class="author-loc">Klein Windhoek</div>
+                </div>
+                <span class="demo-content-badge">Demo Review</span>
+              </div>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="testimonial-card">
+              <div class="rating-stars">★★★★★</div>
+              <p class="testimonial-quote">
+                “Real, authentic artisan sourdough in Namibia! The crumb structure and tang are phenomenal. You can tell they put true love and slow fermentation into every single loaf.”
+              </p>
+              <div class="testimonial-author">
+                <div>
+                  <div class="author-name">Grace Amupanda</div>
+                  <div class="author-loc">Eros, Windhoek</div>
+                </div>
+                <span class="demo-content-badge">Demo Review</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Newsletter Section -->
+      <section class="newsletter-section" aria-label="Bakery Newsletter">
+        <div class="container">
+          <div class="newsletter-box">
+            <h2 class="newsletter-title">Fresh Bakes in Your Inbox</h2>
+            <p class="newsletter-desc">
+              Subscribe to receive weekly specials, weekend secret flavours, and baking tips from our master bakers.
+            </p>
+            <form class="newsletter-form" id="newsletterForm" novalidate>
+              <input type="email" class="newsletter-input" id="newsletterInput" placeholder="Enter your email address..." required aria-label="Email address" />
+              <button type="submit" class="btn-primary" style="white-space: nowrap;">
+                Subscribe
+              </button>
+            </form>
+            <div class="newsletter-form-feedback" id="newsletterFeedback"></div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ====================================================================
+         VIEW: SHOP
+         ==================================================================== -->
+    <div id="viewShop" class="shop-page-wrapper" style="display: none;">
+      <div class="container">
+        
+        <div class="shop-header-banner">
+          <div class="section-label">OUR ARTISAN PANTRY</div>
+          <h1 class="section-title">Fresh From Our Ovens</h1>
+          <p style="color: var(--text-muted); font-size: 1.05rem;">
+            Browse our full catalog of daily-baked pastries, hearth breads, cupcakes, and handcrafted cakes in Windhoek, Namibia.
+          </p>
+        </div>
+
+        <!-- Category Filter Tabs -->
+        <div class="category-nav-bar" id="categoryTabs">
+          <button class="category-btn active" data-category="all">
+            <i data-lucide="sparkles" style="width: 16px; height: 16px;"></i>
+            All Treats
+          </button>
+          <button class="category-btn" data-category="pastries">
+            <i data-lucide="croissant" style="width: 16px; height: 16px;"></i>
+            Pastries
+          </button>
+          <button class="category-btn" data-category="cakes">
+            <i data-lucide="cake" style="width: 16px; height: 16px;"></i>
+            Cakes
+          </button>
+          <button class="category-btn" data-category="cupcakes">
+            <i data-lucide="cherry" style="width: 16px; height: 16px;"></i>
+            Cupcakes
+          </button>
+          <button class="category-btn" data-category="bread">
+            <i data-lucide="wheat" style="width: 16px; height: 16px;"></i>
+            Bread
+          </button>
+          <button class="category-btn" data-category="cookies">
+            <i data-lucide="cookie" style="width: 16px; height: 16px;"></i>
+            Cookies
+          </button>
+          <button class="category-btn" data-category="special">
+            <i data-lucide="gift" style="width: 16px; height: 16px;"></i>
+            Special Orders
+          </button>
+        </div>
+
+        <!-- Controls: Search Input + Sorting -->
+        <div class="shop-controls-bar">
+          <div class="search-input-box">
+            <i data-lucide="search" style="width: 18px; height: 18px; color: var(--text-muted);"></i>
+            <input type="text" id="shopSearchInput" placeholder="Filter treats by name..." aria-label="Filter treats" />
+          </div>
+
+          <div class="sort-select-box">
+            <label for="shopSortSelect">Sort by:</label>
+            <select id="shopSortSelect">
+              <option value="featured">Featured / Best Sellers</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Customer Rating</option>
+              <option value="name">Name: A to Z</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Products Grid (Rendered via JS) -->
+        <div class="products-cards-grid" id="shopProductsGrid">
+          <!-- Dynamically populated -->
+        </div>
+
+        <!-- Empty State -->
+        <div class="shop-empty-state" id="shopEmptyState">
+          <i data-lucide="search-x" style="width: 48px; height: 48px; color: var(--caramel); margin: 0 auto 1rem;"></i>
+          <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: var(--chocolate-brown); margin-bottom: 0.5rem;">
+            No Treats Found
+          </h3>
+          <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+            We couldn't find any baked goods matching your search or filters.
+          </p>
+          <button class="btn-dark-pill" id="btnResetShopFilters">
+            Reset Filters
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         VIEW: ABOUT US
+         ==================================================================== -->
+    <div id="viewAbout" style="display: none; padding: 4rem 0 6rem;">
+      <div class="container">
+        
+        <div style="text-align: center; max-width: 720px; margin: 0 auto 4rem;">
+          <div class="section-label">OUR STORY</div>
+          <h1 class="section-title">The Art & Soul of The Daily Loaf</h1>
+          <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.7;">
+            Born from a deep love for European baking traditions and the warmth of Namibian hospitality.
+          </p>
+        </div>
+
+        <div class="about-preview-grid" style="margin-bottom: 5rem;">
+          <div>
+            <h2 style="font-family: var(--font-serif); font-size: 2.3rem; color: var(--chocolate-brown); margin-bottom: 1rem;">
+              Slow Fermentation. Real Butter. Zero Shortcuts.
+            </h2>
+            <p style="color: var(--text-muted); line-height: 1.75; margin-bottom: 1.2rem;">
+              Founded with the vision to bring authentic, hearth-baked artisan pastries and sourdough to Windhoek, <strong>The Daily Loaf Bakery</strong> started as an early-morning dream in a home kitchen.
+            </p>
+            <p style="color: var(--text-muted); line-height: 1.75; margin-bottom: 1.2rem;">
+              We refuse to cut corners. That means our croissants undergo a 3-day lamination process using high-fat cultured butter. Our sourdough starters are fed daily with organic flours. And our cakes are baked strictly from scratch with fresh local farm eggs and genuine Madagascar bourbon vanilla.
+            </p>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem;">
+              <div style="background-color: #FFFFFF; padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+                <h4 style="font-size: 1rem; color: var(--chocolate-brown); font-weight: 700; margin-bottom: 0.3rem;">36-Hour Sourdough</h4>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">Natural fermentation for rich flavour and easy digestion.</p>
+              </div>
+              <div style="background-color: #FFFFFF; padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+                <h4 style="font-size: 1rem; color: var(--chocolate-brown); font-weight: 700; margin-bottom: 0.3rem;">Belgian Chocolate</h4>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">Decadent cocoa solids for uncompromised fudge cakes and muffins.</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="position: relative;">
+            <img src="images/bakery_interior.jpg" alt="The Daily Loaf Bakery cozy storefront interior" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-xl); width: 100%; object-fit: cover;" />
+          </div>
+        </div>
+
+        <!-- Master Baker Quote -->
+        <div style="background-color: var(--chocolate-brown); color: var(--warm-cream); border-radius: var(--radius-lg); padding: 3.5rem; text-align: center; max-width: 860px; margin: 0 auto; box-shadow: var(--shadow-lg);">
+          <i data-lucide="quote" style="width: 36px; height: 36px; color: var(--caramel-light); margin: 0 auto 1.5rem;"></i>
+          <p style="font-family: var(--font-serif); font-size: 1.8rem; font-style: italic; line-height: 1.4; margin-bottom: 1.5rem;">
+            “Baking isn't merely an exact science of flour and heat—it is a daily offering of comfort, memories, and shared joy.”
+          </p>
+          <div style="font-weight: 700; font-size: 1.05rem; letter-spacing: 0.05em; color: var(--caramel-light);">
+            The Head Baker & Team
+          </div>
+          <div style="font-size: 0.85rem; opacity: 0.8;">The Daily Loaf Bakery, Windhoek</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         VIEW: GALLERY
+         ==================================================================== -->
+    <div id="viewGallery" class="gallery-section" style="display: none;">
+      <div class="container">
+        
+        <div style="text-align: center; max-width: 680px; margin: 0 auto 3rem;">
+          <div class="section-label">VISUAL DELIGHTS</div>
+          <h1 class="section-title">A Feast for the Eyes</h1>
+          <p style="color: var(--text-muted); font-size: 1.05rem;">
+            Click any photograph to view high-resolution details from our bakery ovens and crafting table.
+          </p>
+        </div>
+
+        <!-- Gallery Filters -->
+        <div class="category-nav-bar">
+          <button class="category-btn gallery-filter-btn active" data-gallery-filter="all">All Photos</button>
+          <button class="category-btn gallery-filter-btn" data-gallery-filter="pastries">Pastries</button>
+          <button class="category-btn gallery-filter-btn" data-gallery-filter="bread">Artisan Breads</button>
+          <button class="category-btn gallery-filter-btn" data-gallery-filter="cakes">Cakes</button>
+          <button class="category-btn gallery-filter-btn" data-gallery-filter="behind">Behind the Scenes</button>
+        </div>
+
+        <!-- Gallery Grid (Rendered via JS) -->
+        <div class="gallery-grid" id="galleryGrid">
+          <!-- Dynamically populated -->
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         VIEW: CONTACT
+         ==================================================================== -->
+    <div id="viewContact" style="display: none; padding: 4rem 0 6rem;">
+      <div class="container">
+        
+        <div style="text-align: center; max-width: 680px; margin: 0 auto 3.5rem;">
+          <div class="section-label">GET IN TOUCH</div>
+          <h1 class="section-title">We’d Love to Hear From You</h1>
+          <p style="color: var(--text-muted); font-size: 1.05rem;">
+            Have a question about allergens, custom celebration cakes, or breakfast catering? Drop us a note or send a WhatsApp.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1.35fr; gap: 3.5rem; align-items: flex-start;">
+          
+          <!-- Contact Details Cards -->
+          <div>
+            <div style="background-color: #FFFFFF; border-radius: var(--radius-md); padding: 2rem; border: 1px solid var(--border-subtle); margin-bottom: 1.5rem; box-shadow: var(--shadow-sm);">
+              <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--chocolate-brown); margin-bottom: 1.25rem;">
+                Bakery Information
+              </h3>
+
+              <div class="footer-contact-item" style="color: var(--chocolate-brown);">
+                <i data-lucide="map-pin" style="width: 20px; height: 20px; color: var(--caramel); flex-shrink: 0;"></i>
+                <div>
+                  <strong>Address (Demo):</strong><br />
+                  42 Independence Avenue, Central Windhoek, Namibia
+                </div>
+              </div>
+
+              <div class="footer-contact-item" style="color: var(--chocolate-brown);">
+                <i data-lucide="phone" style="width: 20px; height: 20px; color: var(--caramel); flex-shrink: 0;"></i>
+                <div>
+                  <strong>Telephone:</strong><br />
+                  +264 81 123 4567
+                </div>
+              </div>
+
+              <div class="footer-contact-item" style="color: var(--chocolate-brown);">
+                <i data-lucide="message-circle" style="width: 20px; height: 20px; color: #25D366; flex-shrink: 0;"></i>
+                <div>
+                  <strong>WhatsApp Order Line:</strong><br />
+                  <a href="https://wa.me/264811234567" target="_blank" style="color: #25D366; font-weight: 600;">+264 81 123 4567</a>
+                </div>
+              </div>
+
+              <div class="footer-contact-item" style="color: var(--chocolate-brown);">
+                <i data-lucide="mail" style="width: 20px; height: 20px; color: var(--caramel); flex-shrink: 0;"></i>
+                <div>
+                  <strong>Email:</strong><br />
+                  hello@thedailyloafbakery.na
+                </div>
+              </div>
+            </div>
+
+            <div style="background-color: var(--warm-cream-alt); border-radius: var(--radius-md); padding: 1.75rem; border: 1px solid var(--soft-blush);">
+              <h4 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--chocolate-brown); margin-bottom: 0.8rem;">
+                Opening Hours
+              </h4>
+              <p style="font-size: 0.9rem; color: var(--chocolate-brown); margin-bottom: 0.4rem;">
+                <strong>Monday – Friday:</strong> 07:00 – 18:00
+              </p>
+              <p style="font-size: 0.9rem; color: var(--chocolate-brown); margin-bottom: 0.4rem;">
+                <strong>Saturday:</strong> 07:30 – 16:00
+              </p>
+              <p style="font-size: 0.9rem; color: var(--chocolate-brown);">
+                <strong>Sunday:</strong> 08:00 – 13:00 (Morning Pastries & Fresh Loaves)
+              </p>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div style="background-color: #FFFFFF; border-radius: var(--radius-md); padding: 2.5rem; border: 1px solid var(--border-subtle); box-shadow: var(--shadow-md);">
+            <h3 style="font-family: var(--font-serif); font-size: 1.75rem; color: var(--chocolate-brown); margin-bottom: 0.5rem;">
+              Send Us a Message
+            </h3>
+            <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 1.8rem;">
+              We usually respond within 2 to 4 hours during business days.
+            </p>
+
+            <div id="contactSuccessAlert" style="display: none; background-color: var(--success-bg); color: var(--success); padding: 1rem; border-radius: var(--radius-sm); margin-bottom: 1.5rem; font-size: 0.92rem; border: 1px solid #C8E6C9;">
+              ✓ Thank you! Your message has been received (Demo). We will reply to your email shortly.
+            </div>
+
+            <form id="contactForm" novalidate>
+              <div class="form-group">
+                <label class="form-label" for="contactName">Your Full Name *</label>
+                <input type="text" id="contactName" class="form-control" placeholder="e.g. Martha Shaimemanya" required />
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div class="form-group">
+                  <label class="form-label" for="contactEmail">Email Address *</label>
+                  <input type="email" id="contactEmail" class="form-control" placeholder="martha@example.com" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="contactPhone">Phone / WhatsApp</label>
+                  <input type="tel" id="contactPhone" class="form-control" placeholder="+264 81..." />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contactSubject">Subject</label>
+                <select id="contactSubject" class="form-control">
+                  <option value="general">General Enquiry</option>
+                  <option value="custom-cake">Custom Celebration Cake</option>
+                  <option value="catering">Corporate or Event Catering</option>
+                  <option value="dietary">Allergens & Dietary Information</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contactMessage">Your Message *</label>
+                <textarea id="contactMessage" class="form-control" rows="4" placeholder="Tell us about your event, preferred flavors, or questions..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn-dark-pill" style="width: 100%; padding: 0.9rem;">
+                Send Message
+              </button>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ====================================================================
+       FOOTER
+       ==================================================================== -->
+  <footer class="footer-wrapper">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Brand Summary -->
+        <div>
+          <a href="#home" class="brand-logo-link" style="align-items: flex-start; color: #FFFFFF; margin-bottom: 1.2rem;">
+            <span class="brand-title" style="font-size: 2.2rem; color: #FFFFFF;">The Daily Loaf</span>
+            <span class="brand-subtitle" style="color: var(--caramel-light);">BAKERY</span>
+          </a>
+          <p style="color: rgba(255, 245, 237, 0.75); font-size: 0.92rem; line-height: 1.65; margin-bottom: 1.5rem;">
+            Crafting pure butter croissants, sourdough breads, cupcakes, and celebration cakes daily with passion, slow fermentation, and the finest ingredients in Windhoek, Namibia.
+          </p>
+          <div style="display: flex; gap: 0.8rem;">
+            <a href="https://instagram.com" target="_blank" class="icon-btn" style="background: rgba(255,255,255,0.1); color: var(--warm-cream);" aria-label="Instagram">
+              <i data-lucide="instagram" style="width: 18px; height: 18px;"></i>
+            </a>
+            <a href="https://facebook.com" target="_blank" class="icon-btn" style="background: rgba(255,255,255,0.1); color: var(--warm-cream);" aria-label="Facebook">
+              <i data-lucide="facebook" style="width: 18px; height: 18px;"></i>
+            </a>
+            <a href="https://wa.me/264811234567" target="_blank" class="icon-btn" style="background: rgba(37,211,102,0.25); color: #25D366;" aria-label="WhatsApp">
+              <i data-lucide="message-circle" style="width: 18px; height: 18px;"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#home" class="footer-link">Home</a></li>
+            <li><a href="#shop" class="footer-link">Shop Our Treats</a></li>
+            <li><a href="#about" class="footer-link">About Our Bakery</a></li>
+            <li><a href="#gallery" class="footer-link">Photo Gallery</a></li>
+            <li><a href="#contact" class="footer-link">Contact & Location</a></li>
+          </ul>
+        </div>
+
+        <!-- Opening Hours -->
+        <div>
+          <h4 class="footer-col-title">Opening Hours</h4>
+          <p style="font-size: 0.9rem; color: rgba(255, 245, 237, 0.8); margin-bottom: 0.5rem;">
+            <strong>Mon – Fri:</strong><br />07:00 – 18:00
+          </p>
+          <p style="font-size: 0.9rem; color: rgba(255, 245, 237, 0.8); margin-bottom: 0.5rem;">
+            <strong>Saturday:</strong><br />07:30 – 16:00
+          </p>
+          <p style="font-size: 0.9rem; color: rgba(255, 245, 237, 0.8);">
+            <strong>Sunday:</strong><br />08:00 – 13:00
+          </p>
+        </div>
+
+        <!-- Contact Placeholder -->
+        <div>
+          <h4 class="footer-col-title">Visit Our Bakery</h4>
+          <div class="footer-contact-item">
+            <i data-lucide="map-pin" style="width: 18px; height: 18px; color: var(--caramel-light); flex-shrink: 0;"></i>
+            <span>42 Independence Avenue, Central Windhoek, Namibia (Demo Location)</span>
+          </div>
+          <div class="footer-contact-item">
+            <i data-lucide="phone" style="width: 18px; height: 18px; color: var(--caramel-light); flex-shrink: 0;"></i>
+            <span>+264 81 123 4567</span>
+          </div>
+          <div class="footer-contact-item">
+            <i data-lucide="mail" style="width: 18px; height: 18px; color: var(--caramel-light); flex-shrink: 0;"></i>
+            <span>hello@thedailyloafbakery.na</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 The Daily Loaf Bakery. All rights reserved. Demo website ready for launch.
+        </div>
+        <div style="font-size: 0.8rem; color: rgba(255, 245, 237, 0.5);">
+          Prices in Namibian Dollars (N$) • WhatsApp Order Integration
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ====================================================================
+       MODALS & DRAWERS
+       ==================================================================== -->
+
+  <!-- Slide-over Cart Drawer -->
+  <aside class="drawer-wrapper" id="cartDrawer" aria-label="Shopping Cart Drawer">
+    <div class="drawer-header">
+      <div class="drawer-title">Your Fresh Bakes</div>
+      <button class="icon-btn" id="closeCartDrawer" aria-label="Close Shopping Cart">
+        <i data-lucide="x" style="width: 22px; height: 22px;"></i>
+      </button>
+    </div>
+
+    <!-- Empty State -->
+    <div id="cartEmptyState" style="text-align: center; padding: 4rem 1.5rem; display: none;">
+      <i data-lucide="shopping-bag" style="width: 48px; height: 48px; color: var(--soft-blush); margin: 0 auto 1rem;"></i>
+      <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--chocolate-brown); margin-bottom: 0.5rem;">
+        Your Cart is Empty
+      </h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">
+        Looks like you haven't added any fresh pastries or breads yet.
+      </p>
+      <button class="btn-dark-pill" id="btnEmptyShop">
+        Browse Bakery
+      </button>
+    </div>
+
+    <!-- Items List -->
+    <div class="drawer-body" id="cartItemsContainer">
+      <!-- Injected by CartManager / updateCartUI() -->
+    </div>
+
+    <!-- Summary & Checkout Footer -->
+    <div class="drawer-footer" id="cartSummaryBox">
+      <div class="cart-summary-line">
+        <span>Subtotal</span>
+        <span id="cartSubtotal" style="font-weight: 600;">N$ 0.00</span>
+      </div>
+      <div class="cart-summary-line">
+        <span>Delivery Fee (Windhoek)</span>
+        <span id="cartDeliveryFee" style="font-weight: 600;">N$ 35.00</span>
+      </div>
+      <div class="cart-total-line">
+        <span>Total</span>
+        <span id="cartTotal">N$ 0.00</span>
+      </div>
+      <button class="btn-primary" id="btnProceedCheckout" style="width: 100%; justify-content: center; background-color: var(--chocolate-brown); color: var(--warm-cream);">
+        Proceed to Checkout
+        <i data-lucide="arrow-right" style="width: 18px; height: 18px;"></i>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Slide-over Wishlist Drawer -->
+  <aside class="drawer-wrapper" id="wishlistDrawer" aria-label="Wishlist Drawer">
+    <div class="drawer-header">
+      <div class="drawer-title">Saved Favourites ♡</div>
+      <button class="icon-btn" id="closeWishlistDrawer" aria-label="Close Wishlist">
+        <i data-lucide="x" style="width: 22px; height: 22px;"></i>
+      </button>
+    </div>
+
+    <div id="wishlistEmptyState" style="text-align: center; padding: 4rem 1.5rem; display: none;">
+      <i data-lucide="heart" style="width: 48px; height: 48px; color: var(--soft-blush); margin: 0 auto 1rem;"></i>
+      <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--chocolate-brown); margin-bottom: 0.5rem;">
+        No Favourites Saved
+      </h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">
+        Tap the heart on any treat card to keep it saved for later.
+      </p>
+    </div>
+
+    <div class="drawer-body" id="wishlistItemsContainer">
+      <!-- Dynamically populated -->
+    </div>
+  </aside>
+
+  <!-- Product Detail Quick View Modal -->
+  <div class="modal-overlay" id="productModal" role="dialog" aria-modal="true" aria-labelledby="modalProductTitle">
+    <div class="product-modal-box">
+      <button class="modal-close-btn" id="closeProductModal" aria-label="Close details">
+        <i data-lucide="x" style="width: 20px; height: 20px;"></i>
+      </button>
+
+      <div class="product-modal-image">
+        <img id="modalProductImg" src="" alt="" />
+      </div>
+
+      <div class="product-modal-details">
+        <span class="card-category-pill" id="modalProductCat" style="position: static; margin-bottom: 0.8rem; display: inline-block; width: fit-content;"></span>
+        
+        <h2 id="modalProductTitle" style="font-family: var(--font-serif); font-size: 2.2rem; color: var(--chocolate-brown); line-height: 1.15; margin-bottom: 0.4rem;"></h2>
+        
+        <div style="display: flex; align-items: baseline; gap: 1rem; margin-bottom: 0.8rem;">
+          <div id="modalProductPrice" style="font-size: 1.45rem; font-weight: 700; color: var(--chocolate-brown);"></div>
+          <div id="modalProductRating" style="font-size: 0.88rem; color: #FFA000; font-weight: 600;"></div>
+        </div>
+
+        <div id="modalProductDietary" style="margin-bottom: 1.2rem; display: flex; flex-wrap: wrap; gap: 0.4rem;"></div>
+
+        <p id="modalProductDesc" style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.65; margin-bottom: 1.5rem;"></p>
+
+        <div style="background-color: var(--warm-cream); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--soft-blush); margin-bottom: 1.5rem; font-size: 0.85rem;">
+          <p><strong>Ingredients:</strong> <span id="modalProductIngredients"></span></p>
+          <p style="margin-top: 0.4rem;"><strong>Allergens:</strong> <span id="modalProductAllergens"></span></p>
+        </div>
+
+        <!-- Stepper & Actions -->
+        <div style="display: flex; align-items: center; gap: 1rem; margin-top: auto;">
+          <div style="display: flex; align-items: center; gap: 0.5rem; border: 1px solid var(--border-subtle); padding: 0.35rem 0.6rem; border-radius: var(--radius-pill); background-color: var(--warm-cream);">
+            <button class="qty-btn" id="modalQtyMinus">-</button>
+            <span class="qty-val" id="modalQtyVal" style="font-size: 1rem; padding: 0 4px;">1</span>
+            <button class="qty-btn" id="modalQtyPlus">+</button>
+          </div>
+
+          <button class="btn-dark-pill" id="modalBtnAddToCart" style="flex: 1; padding: 0.85rem 1rem;">
+            <i data-lucide="shopping-bag" style="width: 18px; height: 18px;"></i>
+            Add to Cart
+          </button>
+        </div>
+
+        <!-- Direct WhatsApp Inquiry -->
+        <button class="btn-whatsapp-order" id="modalBtnWhatsApp" style="margin-top: 0.75rem; padding: 0.75rem 1rem; font-size: 0.9rem;">
+          <i data-lucide="message-circle" style="width: 18px; height: 18px;"></i>
+          Quick Order on WhatsApp
+        </button>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkout Modal -->
+  <div class="modal-overlay" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+    <div class="checkout-modal-box">
+      <button class="modal-close-btn" id="closeCheckoutModal" aria-label="Close Checkout">
+        <i data-lucide="x" style="width: 20px; height: 20px;"></i>
+      </button>
+
+      <div style="margin-bottom: 2rem;">
+        <div class="section-label">THE DAILY LOAF BAKERY</div>
+        <h2 id="checkoutTitle" style="font-family: var(--font-serif); font-size: 2.2rem; color: var(--chocolate-brown);">
+          Complete Your Order
+        </h2>
+        <p style="color: var(--text-muted); font-size: 0.92rem;">
+          Fill in your fulfillment details below. You can send your order instantly to our bakers via WhatsApp or submit a demo order.
+        </p>
+      </div>
+
+      <div class="checkout-grid">
+        
+        <!-- Left: Customer Information Form -->
+        <form id="checkoutForm" novalidate>
+          <div class="fulfillment-toggle">
+            <div class="fulfillment-option active" id="optDelivery">
+              <i data-lucide="truck" style="width: 16px; height: 16px; display: inline-block; vertical-align: middle; margin-right: 4px;"></i>
+              Delivery (Windhoek)
+            </div>
+            <div class="fulfillment-option" id="optPickup">
+              <i data-lucide="store" style="width: 16px; height: 16px; display: inline-block; vertical-align: middle; margin-right: 4px;"></i>
+              In-Store Pickup
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="checkoutFullName">Full Name *</label>
+            <input type="text" id="checkoutFullName" class="form-control" placeholder="e.g. Johannes Shipanga" required />
+            <div class="form-error-msg" id="errFullName">Please enter your full name.</div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label" for="checkoutPhone">Phone / WhatsApp *</label>
+              <input type="tel" id="checkoutPhone" class="form-control" placeholder="+264 81 234 5678" required />
+              <div class="form-error-msg" id="errPhone">Please provide a valid phone number.</div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="checkoutEmail">Email Address *</label>
+              <input type="email" id="checkoutEmail" class="form-control" placeholder="johannes@gmail.com" required />
+              <div class="form-error-msg" id="errEmail">Please enter a valid email.</div>
+            </div>
+          </div>
+
+          <div class="form-group" id="deliveryAddressGroup">
+            <label class="form-label" for="checkoutAddress">Delivery Address (Windhoek) *</label>
+            <input type="text" id="checkoutAddress" class="form-control" placeholder="Street name, house/flat number, suburb" />
+            <div class="form-error-msg" id="errAddress">Please provide a delivery address.</div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label" for="checkoutDate">Preferred Date</label>
+              <input type="date" id="checkoutDate" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="checkoutTime">Preferred Time Slot</label>
+              <select id="checkoutTime" class="form-control">
+                <option value="Morning (08:00 - 11:00)">Morning (08:00 - 11:00)</option>
+                <option value="Midday (11:00 - 14:00)">Midday (11:00 - 14:00)</option>
+                <option value="Afternoon (14:00 - 17:00)">Afternoon (14:00 - 17:00)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="checkoutInstructions">Special Baking / Delivery Instructions</label>
+            <textarea id="checkoutInstructions" class="form-control" rows="2" placeholder="e.g. Please slice sourdough loaf, write 'Happy Birthday Maria' on cake box, etc."></textarea>
+          </div>
+
+          <!-- Notice about Real Payments -->
+          <div style="background-color: var(--warm-cream); border: 1px solid var(--soft-blush); padding: 0.85rem; border-radius: var(--radius-sm); font-size: 0.82rem; color: var(--chocolate-brown); margin-bottom: 1.5rem;">
+            <i data-lucide="info" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-right: 4px; color: var(--caramel);"></i>
+            <strong>Payment Notice:</strong> We do not charge your credit card directly without live payment gateway credentials. Use <strong>WhatsApp Ordering</strong> to confirm your payment with our bakery counter.
+          </div>
+
+          <!-- Checkout Buttons -->
+          <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <button type="button" class="btn-whatsapp-order" id="btnSubmitWhatsAppOrder">
+              <i data-lucide="message-circle" style="width: 20px; height: 20px;"></i>
+              Send Order via WhatsApp (+264 81 123 4567)
+            </button>
+            <button type="button" class="btn-dark-pill" id="btnSubmitDemoOrder" style="padding: 0.85rem;">
+              Confirm as Demo Order
+            </button>
+          </div>
+        </form>
+
+        <!-- Right: Order Summary -->
+        <div style="background-color: var(--warm-cream); border-radius: var(--radius-md); padding: 1.75rem; border: 1px solid var(--soft-blush); height: fit-content;">
+          <h3 style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--chocolate-brown); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border-subtle);">
+            Order Summary
+          </h3>
+
+          <div id="checkoutItemsList" style="max-height: 250px; overflow-y: auto; margin-bottom: 1rem; border-bottom: 1px dashed var(--border-subtle); padding-bottom: 0.5rem;">
+            <!-- Dynamically populated -->
+          </div>
+
+          <div class="cart-summary-line">
+            <span>Subtotal</span>
+            <span id="checkoutSubtotal">N$ 0.00</span>
+          </div>
+          <div class="cart-summary-line">
+            <span>Delivery Fee</span>
+            <span id="checkoutDeliveryFee">N$ 35.00</span>
+          </div>
+          <div class="cart-total-line" style="font-size: 1.3rem;">
+            <span>Grand Total</span>
+            <span id="checkoutTotal">N$ 0.00</span>
+          </div>
+
+          <div style="text-align: center; color: var(--text-muted); font-size: 0.78rem;">
+            Bakery pickup: 42 Independence Ave, Windhoek
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Order Success Receipt Modal -->
+  <div class="modal-overlay" id="orderSuccessModal" role="dialog" aria-modal="true">
+    <div style="background: #FFFFFF; border-radius: var(--radius-lg); max-width: 550px; width: 100%; padding: 2.5rem; text-align: center; box-shadow: var(--shadow-xl); position: relative;">
+      <div style="width: 65px; height: 65px; border-radius: 50%; background-color: var(--success-bg); color: var(--success); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem;">
+        <i data-lucide="check" style="width: 36px; height: 36px;"></i>
+      </div>
+
+      <h2 style="font-family: var(--font-serif); font-size: 2.2rem; color: var(--chocolate-brown); margin-bottom: 0.5rem;">
+        Order Received!
+      </h2>
+      <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.25rem;">
+        Thank you for ordering with The Daily Loaf Bakery. Your order reference is:
+      </p>
+
+      <div style="font-size: 1.6rem; font-weight: 700; color: var(--caramel); letter-spacing: 0.05em; margin-bottom: 1.5rem;" id="orderSuccessRef">
+        #DLB-10001
+      </div>
+
+      <div id="orderSuccessDetails"></div>
+
+      <button class="btn-dark-pill" id="closeOrderSuccessModal" style="padding: 0.85rem 2rem;">
+        Back to Bakery Home
+      </button>
+    </div>
+  </div>
+
+  <!-- Global Quick Search Modal -->
+  <div class="modal-overlay" id="searchModal" role="dialog" aria-modal="true">
+    <div style="background: #FFFFFF; border-radius: var(--radius-lg); max-width: 600px; width: 100%; padding: 2rem; box-shadow: var(--shadow-xl); position: relative;">
+      <button class="modal-close-btn" id="closeSearchModal" aria-label="Close search">
+        <i data-lucide="x" style="width: 20px; height: 20px;"></i>
+      </button>
+
+      <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--chocolate-brown); margin-bottom: 1.25rem;">
+        Search Our Bakery
+      </h3>
+
+      <div class="search-input-box" style="width: 100%; padding: 0.75rem 1.2rem; margin-bottom: 1.5rem;">
+        <i data-lucide="search" style="width: 20px; height: 20px; color: var(--text-muted);"></i>
+        <input type="text" id="globalSearchInput" placeholder="Search croissants, sourdough, chocolate cake, muffins..." />
+      </div>
+
+      <div id="globalSearchResults" style="max-height: 340px; overflow-y: auto;">
+        <p style="text-align: center; color: var(--text-muted); padding: 2rem 0;">
+          Start typing to explore our bakery menu...
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fullscreen Image Lightbox Modal -->
+  <div class="modal-overlay" id="lightboxModal" role="dialog" aria-modal="true">
+    <div class="lightbox-box">
+      <button class="modal-close-btn" id="closeLightboxModal" style="position: absolute; top: -45px; right: 0; background: rgba(255,255,255,0.85);" aria-label="Close photo">
+        <i data-lucide="x" style="width: 20px; height: 20px;"></i>
+      </button>
+      <img id="lightboxImg" src="" alt="" />
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp Quick Button -->
+  <a href="https://wa.me/264811234567" target="_blank" class="floating-whatsapp-btn" title="Chat with Bakery on WhatsApp" aria-label="WhatsApp Us">
+    <i data-lucide="message-circle" style="width: 28px; height: 28px;"></i>
+  </a>
+
+  <!-- Toast Notifications Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

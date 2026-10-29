@@ -1,0 +1,21 @@
+{
+  "name": "the-daily-loaf-bakery",
+  "version": "1.0.0",
+  "description": "The Daily Loaf Bakery - Premium Artisan Bakery Website with E-commerce & WhatsApp Ordering (Windhoek, Namibia)",
+  "main": "index.html",
+  "scripts": {
+    "start": "powershell -ExecutionPolicy Bypass -File server.ps1",
+    "serve": "npx serve ."
+  },
+  "keywords": [
+    "bakery",
+    "ecommerce",
+    "artisan-bread",
+    "croissant",
+    "whatsapp-ordering",
+    "namibia",
+    "windhoek"
+  ],
+  "author": "The Daily Loaf Bakery",
+  "license": "ISC"
+}
